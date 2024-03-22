@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=/tmp/ibek.ioc.schema.json
+
+ioc_name: "{{ ioc_yaml_file_name }}"
+
+description: Example ADS driver IOC
+
+entities:
+  - type: devIocStats.iocAdminSoft
+    IOC: "{{ ioc_name | upper }}"
+
+  - type: asyn.AsynIP
+    name: p1
+    port: 127.0.0.1:5401
+
+  - type: adsDriver.AdsSetLocalAMSNetID
+    name: ads_net_id
+    ams_net_id: "192.168.122.75.1.1"
+
+  - type: adsDriver.AdsOpen
+    name: ads
+    PORT: ADS
+    remote_ip_address: "127.0.0.1"
+    remote_ams_net_id: "127.0.0.1.1.1"

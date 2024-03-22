@@ -24,6 +24,15 @@ COPY ibek-support/_global/ _global
 COPY ibek-support/iocStats/ iocStats
 RUN iocStats/install.sh 3.2.0
 
+COPY ibek-support/asyn/ asyn
+RUN asyn/install.sh R4-44-2
+
+COPY ibek-support/autoparamDriver/ autoparamDriver
+RUN autoparamDriver/install.sh v2.0.0
+
+COPY ibek-support/adsDriver/ adsDriver
+RUN adsDriver/install.sh v3.1.0
+
 ################################################################################
 #  TODO - Add further support module installations here
 ################################################################################
